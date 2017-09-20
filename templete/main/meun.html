@@ -1,0 +1,15 @@
+    <ul class="sidebar2 dark" style="height: 100%">
+        <li class="title">CRM Meun</li>
+        <li class="active"><a href="#"><span class="mif-home icon"></span>{{menu.home}}</a></li>
+        <li class="stick bg-green">
+            <a class="dropdown-toggle" href="#"><span class="mif-tree icon"></span>{{menu.user}}</a>
+            <ul class="d-menu" data-role="dropdown">
+                <li><a  ui-sref="main.user({manager:'manager'})"><span class="mif-vpn-publ icon"></span> {{menu.userTable}}</a></li>
+            </ul>
+        </li>
+
+        <!--<li class="title">Title 2</li>-->
+        <!--<li><a href="#">Other Item 1</a></li>-->
+        <!--<li><a href="#">Other item 2</a></li>-->
+        <!--<li><a href="#">Other item 3</a></li>-->
+    </ul>

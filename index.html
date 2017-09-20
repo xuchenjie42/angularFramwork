@@ -2,19 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CRM</title>
+    <style>
+        @media screen and (max-width: 800px){
+            #cell-sidebar {
+                flex-basis: 52px;
+            }
+            #cell-content {
+                flex-basis: calc(100% - 52px);
+            }
+        }
+    </style>
 </head>
 <body >
-
-<!-- main content  -->
-<div id="content" >
-    <a href="#main" >click</a>
+<div ui-view="main" class="bg-steel" style="height: 100%"></div>
 
 
-</div>
-<!-- <div ng-view> </div>-->
-<div ui-view> </div>
 <!-- RequireJS Loader -->
 <script data-main="app/main.js" src="lib/require.js" charset="UTF-8"></script>
+<link rel="stylesheet" href="metro/css/metro.css" charset="utf-8">
+<link rel="stylesheet" href="metro/css/metro-colors.min.css" charset="utf-8">
+<link rel="stylesheet" href="metro/css/metro-icons.min.css" charset="utf-8">
+<link rel="stylesheet" href="metro/css/metro-responsive.min.css" charset="utf-8">
+<link rel="stylesheet" href="metro/css/metro-rtl.min.css" charset="utf-8">
+<link rel="stylesheet" href="metro/css/metro-schemes.min.css" charset="utf-8">
 </body>
 </html>

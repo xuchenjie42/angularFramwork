@@ -1,0 +1,45 @@
+<div  class="cell auto-size padding20 bg-white" id="cell-content" style="height: 100%;width: 100%">
+    <h1 class="text-light">{{title}} <span class="mif-drive-eta place-right"></span></h1>
+    <hr class="thin bg-grayLighter">
+    <button class="button primary" ng-click="addUser()" ><span class="mif-plus"></span> {{add}}</button>
+    <!--<button class="button success" ng-click=""><span class="mif-play"></span> Start</button>-->
+    <!--<button class="button warning" ng-click=""><span class="mif-loop2"></span> Restart</button>-->
+    <!--<button class="button alert" ng-click="">Stop all machines</button>-->
+    <hr class="thin bg-grayLighter">
+    <table class="dataTable border bordered"  data-auto-width="false">
+        <thead>
+        <tr>
+            <td style="width: 20px">
+            </td>
+            <td class="sortable-column sort-asc" style="width: 100px">{{id}}</td>
+            <td class="sortable-column">{{name}}</td>
+            <td class="sortable-column">{{address}}</td>
+            <td class="sortable-column" style="width: 20px">{{status}}</td>
+            <td style="width: 20px">{{switch}}</td>
+        </tr>
+        </thead>
+        <tbody >
+        <tr ng-repeat="user in userList">
+            <td>
+                <label class="input-control checkbox small-check no-margin">
+                    <input type="checkbox" ng-checked="user.check">
+                    <span class="check"></span>
+                </label>
+            </td>
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.address}}</td>
+            <td class="align-center">
+                <span ng-if="user.status" class="mif-checkmark fg-green" ></span>
+                <span ng-if="!user.status" class="mif-stop fg-red" ></span>
+            </td>
+            <td>
+                <label class="switch-original">
+                    <input type="checkbox" ng-checked="user.status">
+                    <span class="check"></span>
+                </label>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

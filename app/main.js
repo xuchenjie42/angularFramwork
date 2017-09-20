@@ -7,8 +7,10 @@ require.config({
     "angularRoute": "../lib/angular/angular-route",
     "uiRoute": "../lib/angular/angular-ui-route",
     "jquery": "../lib/jquery-3.1.0",
+    "jquery.dataTables":"../lib/jquery.dataTables.min",
     "underscore": "../lib/underscore",
-    "text": "../lib/text"
+    "text": "../lib/text",
+    "metro":"../metro/js/metro"
   },
   shim: {
     angular: {
@@ -21,14 +23,20 @@ require.config({
     "uiRoute": {
       deps: ["angular"],
       exports: "uiRoute"
+    },
+    "jquery.dataTables":["jquery"],
+    "metro":{
+      deps: ["jquery","jquery.dataTables"],
+      exports :"metro"
     }
   },
   priority:[
-    'angular'
+    'angular',
+    'metro'
   ],
   urlArgs:'v=1.6',
   waitSeconds: 0
 });
-require(['app','angular'],function (App,angular) {
+require(['app','angular','metro'],function (App,angular) {
   angular.bootstrap(document.body,['myApp']);
 });
